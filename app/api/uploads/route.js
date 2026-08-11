@@ -19,7 +19,7 @@ export async function POST(request) {
     }
 
     return NextResponse.json({
-      path: `/uploads/${file.filename}`,
+      path: `/${["uploads", file.filename].join("/")}`,
       filename: file.originalname,
       mimetype: file.mimetype
     });

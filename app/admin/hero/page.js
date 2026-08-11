@@ -43,7 +43,13 @@ export default function AdminHeroPage() {
       const res = await fetch("/api/uploads", { method: "POST", body: data });
       if (!res.ok) throw new Error();
       const result = await res.json();
-      setForm((current) => ({ ...current, [targetField]: result.path }));
+      const nextForm = { ...form, [targetField]: result.path };
+      setForm(nextForm);
+      await fetch("/api/hero", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(nextForm)
+      });
       setStatus({
         type: "success",
         message:
