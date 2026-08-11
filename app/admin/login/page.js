@@ -80,9 +80,9 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        <p className="text-xs text-ink-muted text-center mt-6">
+        {/* <p className="text-xs text-ink-muted text-center mt-6">
           First time? Sign in with the ADMIN_EMAIL / ADMIN_PASSWORD set in your .env.local file.
-        </p>
+        </p> */}
       </div>
     </div>
   );
